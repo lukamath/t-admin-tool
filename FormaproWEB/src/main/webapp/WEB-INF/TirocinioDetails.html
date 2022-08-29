@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <meta charset="ISO-8859-1"> -->
+<meta charset="UTF-8">
+<title>LAM Home Admin</title>
+</head>
+
+<body>
+	
+<h1>Formapro Admin Application</h1>
+
+	<div align="right">
+					
+					<div th:text="${session.autorizzazione != null} ? ${session.autorizzazione.username}: 'Sign in' ">I don't need to write here</div> -->
+					<a th:href="@{/GoToHomeAdmin}">My Page</a><br>		
+					<span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"> Today is </span>
+	</div>
+
+	<table>
+			<thead>
+				<tr>
+					<th>ID Iscrizione</th>
+					<th>Nome Struttura</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="t : ${tirocini}">
+						<td th:text="${t.id_iscrizione}"></td>
+						<td th:text="${t.struttura.nomeStruttura}"></td>
+					</tr>
+			</tbody>
+	</table>
+
+</body>

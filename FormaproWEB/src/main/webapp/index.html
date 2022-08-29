@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <meta charset="ISO-8859-1"> -->
+<meta charset="UTF-8">
+<title>LAM Formapro Centro Studi</title>
+
+</head>
+<body>
+	
+	<h1>Formapro Admin Application</h1>
+	
+	<div align="right">
+				
+<!-- 				<div th:text="${session.customer != null} ? ${session.customer.username}: 'Sign in' ">I don't need to write here</div> -->
+				<a th:href="@{/WelcomePage}">My Page</a><br>		
+				<span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"> Today is </span>
+						
+				
+			<table>
+				<tr>
+					<th>Login</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>
+						<form action="CheckLogin" method="POST">
+							Username: <input type="text" name="username" required> <br>
+							Password: <input type="password" name="pwd" required><br>
+							<input type="submit" value="Login">
+							<p th:text=" ${errorMsg}"></p>
+						</form>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+			</table>
+	</div>
+
+
+</body>
+
+</html>

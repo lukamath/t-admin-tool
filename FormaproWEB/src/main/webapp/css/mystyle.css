@@ -1,0 +1,5 @@
+.t_flexbox {
+  color: blue;
+  display: flex;
+  flex-wrap: wrap;
+}

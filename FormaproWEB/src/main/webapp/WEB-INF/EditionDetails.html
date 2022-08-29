@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <meta charset="ISO-8859-1"> -->
+<meta charset="UTF-8">
+<title>LAM Home Admin</title>
+</head>
+
+<body>
+	
+<h1>Formapro Admin Application</h1>
+
+	<div align="right">
+					
+					<div th:text="${session.autorizzazione != null} ? ${session.autorizzazione.username}: 'Sign in' ">I don't need to write here</div> -->
+					<a th:href="@{/GoToHomeAdmin}">My Page</a><br>		
+					<span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"> Today is </span>
+	</div>
+
+	<table>
+			<thead>
+				<tr>
+					<th>Id Edizione</th>
+					<th>id Registro</th>
+					<th>Cognome</th>
+					<th>Nome</th>
+					<th>Corso</th>
+					<th>ID Corso</th>
+					<th>Tirocinio</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="s : ${studenti}">
+						<td th:text="${s.id_edizione}"></td>
+						<td th:text="${s.id_registro}"></td>
+						<td th:text="${s.cognome}"></td>
+						<td th:text="${s.nome}"></td>
+						<td th:text="${corso}"></td>
+						<td th:text="${s.edizione.idcorso}"></td>
+						<td><a th:href="@{/GetTirocinioDetails(iscrizioneid=${s.id_iscrizione})}">Dettagli Tirocinio</a></td>
+					</tr>
+			</tbody>
+	</table>
+
+</body>

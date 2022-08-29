@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="Formapro" transaction-type="JTA">
+		<jta-data-source>FormaDB</jta-data-source>
+		<class>it.fpcs.lam.formapro.entities.AnagraficaUtente</class>
+		<class>it.fpcs.lam.formapro.entities.Autorizzazione</class>
+		<class>it.fpcs.lam.formapro.entities.BillingCorso</class>
+		<class>it.fpcs.lam.formapro.entities.Corso</class>
+		<class>it.fpcs.lam.formapro.entities.Edizione</class>
+		<class>it.fpcs.lam.formapro.entities.Iscrizione</class>
+		<class>it.fpcs.lam.formapro.entities.IscrizionePK</class>
+		<class>it.fpcs.lam.formapro.entities.Pagamento</class>
+		<class>it.fpcs.lam.formapro.entities.Struttura</class>
+		<class>it.fpcs.lam.formapro.entities.Studente</class>
+		<class>it.fpcs.lam.formapro.entities.Utente</class>
+		<class>it.fpcs.lam.formapro.entities.Tirocinio</class>
+		<properties>
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_tirocinio?serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="lam13"/>
+		</properties>
+	</persistence-unit>
+</persistence>
